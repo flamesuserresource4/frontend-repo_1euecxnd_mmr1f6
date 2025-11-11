@@ -1,0 +1,105 @@
+:root {
+  --bg: #0f172a;
+  --accent: #00bfff;
+  --accent2: #ff3c8f;
+}
+
+.canvasWrap {
+  position: fixed;
+  inset: 0;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 60% at 70% 30%, rgba(0,191,255,0.08), transparent 60%),
+              radial-gradient(40% 40% at 30% 70%, rgba(255,60,143,0.08), transparent 60%);
+  pointer-events: none;
+}
+
+.pageWrap {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 100px 16px 40px;
+}
+
+.title {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: clamp(28px, 6vw, 64px);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  text-shadow: 0 0 16px rgba(0,191,255,0.45), 0 0 32px rgba(0,191,255,0.25);
+}
+
+.subtitle {
+  margin-top: 12px;
+  color: rgba(255,255,255,0.85);
+}
+
+.cta {
+  display: inline-flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  box-shadow: 0 8px 30px rgba(0,191,255,0.25), 0 8px 30px rgba(255,60,143,0.25);
+}
+
+.ghostBtn {
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 600;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.section {
+  padding: 64px 16px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  margin-bottom: 16px;
+  color: #a5b4fc;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 18px;
+  border-radius: 14px;
+}
+
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .cards { grid-template-columns: 1fr; }
+}
